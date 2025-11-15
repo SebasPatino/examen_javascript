@@ -8,25 +8,17 @@ function calcularImpuestoUnitario(valor, porcentaje) {
   return valor * (porcentaje / 100);
 }
 
-// Función expresada: procesa varios productos
-const procesarImpuestos = function() {
-  // Pedimos la cantidad de productos
-  const cantidad = parseInt(prompt("Ingrese la cantidad de productos:"));
-  let totalImpuesto = 0; // acumulador del impuesto total
+// Función expresada que procesa varios productos
+const procesarImpuestos = function(cantidad, valores, porcentajes) {
+  let totalImpuesto = 0; // acumulador
 
-  // Ciclo para pedir cada producto
+  // Ciclo para recorrer todos los productos
   for (let i = 0; i < cantidad; i++) {
-    const valor = parseFloat(prompt(`Ingrese el valor del producto ${i + 1}:`));
-    const porcentaje = parseFloat(prompt(`Ingrese el porcentaje de impuesto del producto ${i + 1}:`));
-
-    // Usamos la función declarada para calcular el impuesto unitario
-    const impuesto = calcularImpuestoUnitario(valor, porcentaje);
-
-    // Acumulamos el impuesto
-    totalImpuesto += impuesto;
+    const impuesto = calcularImpuestoUnitario(valores[i], porcentajes[i]);
+    totalImpuesto += impuesto; // acumulamos
   }
 
-  // Retornamos el total acumulado
+  // Retornamos el total
   return totalImpuesto;
 };
 

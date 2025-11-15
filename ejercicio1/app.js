@@ -1,5 +1,4 @@
 import { 
-    evaluarRendimiento, 
     calcularPromedio
 } from "./modulos/index.js";
 

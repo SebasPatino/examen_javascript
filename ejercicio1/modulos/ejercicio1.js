@@ -33,4 +33,4 @@ function calcularPromedio(notas) {
   return { promedio, rendimiento };
 }
 // Exportamos las funciones para que puedan ser usadas en otros módulos
-export { evaluarRendimiento, calcularPromedio };
+export { calcularPromedio };
