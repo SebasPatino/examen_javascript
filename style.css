@@ -1,0 +1,105 @@
+:root {
+    --color-primario: #2e6dcc;
+    --color-secundario: #ffffff;
+    --color-texto: #000000;
+    --sombra: rgba(0, 0, 0, 0.1);
+    --espaciado: 1rem;
+    --radio: 8px;
+    --fuente: 'Times New Roman', Times, Serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fuente);
+    background: var(--color-secundario);
+    color: var(--color-texto);
+    display: flex;
+}
+
+.sidebar {
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    padding-top: var(--espaciado);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav li {
+    margin: 1.5rem 0;
+}
+
+.sidebar nav a {
+    color: var(--color-secundario);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar nav a:hover {
+    text-decoration: underline;
+}
+
+.contenido {
+    margin-left: 80px;
+    display: flex;
+    padding: var(--espaciado);
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.contenido::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.mensaje {
+    float: left;
+    width: 48%;
+    margin-right: 2%;
+    background-color: var(--color-secundario);
+    padding: 2rem;
+    border-radius: var(--radio);
+    box-shadow: 0 0 10px var(--sombra);
+    position: relative;
+    overflow: hidden;
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-origin: content-box;
+}
+
+.mensaje::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    border-radius: var(--radio);
+}
+
+.mensaje h1, .mensaje p {
+    position: relative;
+    z-index: 1;
+}
+
+.mensaje h1 {
+    color:#001553;
+    margin-bottom: 1rem;
+    font-size: 50px;
+    font-style: oblique;
+}
